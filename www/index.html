@@ -5,13 +5,13 @@
 <head>
   <meta charset="utf-8">
          <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+   /*<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+      */<link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>EVEnergy test</title>
 
 	<script type="text/javascript">
 
-  /*function httpGet(theUrl)
+  function httpGet(theUrl)
 {
    
     var xmlHttp = "nnnooo";
@@ -32,8 +32,7 @@ http.get("http://localhost:8080/speed", function(res) {
 });
   }
 
-*/
-    
+
     //! evenergy.js
 //! version: 0.1.0
 //! authors: Filip Kis, Anders LundstrÃ¶m
@@ -251,62 +250,9 @@ http.get("http://localhost:8080/speed", function(res) {
 
 }(window || this));
     
-    
-function httpGet(){
-
-  }
 
     
-    
-    // Create the XHR object.
-function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-    // XHR for Chrome/Firefox/Opera/Safari.
-    xhr.open(method, url, true);
-  } else if (typeof XDomainRequest != "undefined") {
-    // XDomainRequest for IE.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-  } else {
-    // CORS not supported.
-    xhr = null;
-  }
-  return xhr;
-}
 
-// Helper method to parse the title tag from the response.
-function getTitle(text) {
-  return text.match('<title>(.*)?</title>')[1];
-}
-
-// Make the actual CORS request.
-function makeCorsRequest() {
-  // All HTML5 Rocks properties support CORS.
-  var url = 'http://localhost:8080/speed';
-
-  var xhr = createCORSRequest('GET', url);
-  if (!xhr) {
-    console.log('CORS not supported');
-    return;
-  }
-
-  // Response handlers.
-  xhr.onload = function() {
-    var text = xhr.responseText;
-    var title = getTitle(text);
-    	document.getElementById("httpspeed").innerHTML = "yes" + url + title;
-    console.log('Response from CORS request to ' + url + ': ' + title);
-  };
-
-  xhr.onerror = function() {
-    	document.getElementById("httpspeed").innerHTML = "Woops, there was an error making the request.";
-    console.log('Woops, there was an error making the request.');
-  };
-
-  xhr.send();
-}
-    
     
     
   </script>
