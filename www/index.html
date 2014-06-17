@@ -6,7 +6,18 @@
          <meta name="format-detection" content="telephone=no" />
    <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>EVEnergy test</title>
+<style>
 
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+</style>
 <script type="text/javascript">
 var speedData = 30;
 function httpGet()
@@ -314,18 +325,7 @@ Estimated distance (based on state of charge): <span id="estimatedDistance"></sp
     
 </div>
   <table><tr><td>
-<style>
-
-.chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
-}
-
-</style>
+    <div class="chart"></div>
     </td>
     </tr>
   </table>
