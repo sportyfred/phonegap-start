@@ -316,30 +316,6 @@ http.get("http://localhost:8080/speed", function(res) {
 		<button onclick="httpGet()">GetSpeed</button>
     
 	</div>
-  <table align="center"><tr><td><div class="chart"></div></td></tr></table>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-    <script>
-      function httpGet(){
-  createCORSRequest();
-  makeCorsRequest();
-      }
-  </script>
-<script>
-
-var data = [4, 8, 15, 16, 23, 42];
-
-var x = d3.scale.linear()
-    .domain([0, d3.max(data)])
-    .range([0, 420]);
-
-d3.select(".chart")
-  .selectAll("div")
-    .data(data)
-  .enter().append("div")
-    .style("width", function(d) { return x(d) + "px"; })
-    .text(function(d) { return d; });
-</script>
-
 
 	<script type="text/javascript">
 
