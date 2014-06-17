@@ -19,23 +19,6 @@
 
 </style>
 <script type="text/javascript">
- var speedData = 30;
-function httpGet()
-{
-
-xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","http://localhost:8080/speed",true);
-try {
-  xmlhttp.send();
-  
-speedData = parseInt(xmlhttp.responseText);
-  
-  document.getElementById("httpspeed").innerHTML= speedData;
-} catch(e) {
-  document.getElementById("httpspeed").innerHTML="statttus: " +e;
-
-}
-}
 
 
     //! evenergy.js
@@ -359,8 +342,16 @@ calculate();
 </script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
+ var speedData = 30;
 
-var data = [speedData, 8, 15, 16, 23, 42];
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","http://localhost:8080/speed",true);
+try {
+  xmlhttp.send();
+  
+speedData = parseInt(xmlhttp.responseText);
+
+  var data = [speedData, 8, 15, 16, 23, 42];
 
 var x = d3.scale.linear()
     .domain([0, d3.max(data)])
@@ -372,6 +363,14 @@ d3.select(".chart")
   .enter().append("div")
     .style("width", function(d) { return x(d) + "px"; })
     .text(function(d) { return d; });
+  document.getElementById("httpspeed").innerHTML= speedData;
+} catch(e) {
+  document.getElementById("httpspeed").innerHTML="statttus: " +e;
+
+}
+
+
+
 </script>
 
 <script type="text/javascript" src="phonegap.js"></script>
