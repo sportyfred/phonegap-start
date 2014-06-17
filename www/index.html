@@ -359,7 +359,7 @@ xmlhttp.open("GET","http://localhost:8080/speed",true);
 try {
   xmlhttp.send();
   
-speedData = parseInt(xmlhttp.responseText);
+var speedData = parseInt(xmlhttp.responseText);
 
   var data = [speedData, 8, 15, 16, 23, 42];
 
