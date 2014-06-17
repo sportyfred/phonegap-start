@@ -8,16 +8,16 @@
         <title>EVEnergy test</title>
 
 <script type="text/javascript">
-
+var speedData = 30;
 function httpGet()
 {
 
 xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","http://localhost:8080/speed",false);
+xmlhttp.open("GET","http://localhost:8080/speed",true);
 try {
   xmlhttp.send();
-  alert(xmlhttp.status + xmlhttp.responseText + "jssj");
-  
+  //alert(xmlhttp.status + xmlhttp.responseText + "jssj");
+speedData = xmlhttp.responseText;
 } catch(e) {
   document.getElementById("httpspeed").innerHTML="statttus: " +e;
 
@@ -313,7 +313,22 @@ Estimated distance (based on state of charge): <span id="estimatedDistance"></sp
 <button onclick="httpGet()">GetSpeed</button>
     
 </div>
+  <table><tr><td>
+<style>
 
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+</style>
+    </td>
+    </tr>
+  </table>
 <script type="text/javascript">
 
 function calculate() {
@@ -340,6 +355,23 @@ document.getElementById("estimatedDistance").innerHTML = ed;
 calculate();
 
 </script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var data = [speedData, 8, 15, 16, 23, 42];
+
+var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+d3.select(".chart")
+  .selectAll("div")
+    .data(data)
+  .enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d) { return d; });
+</script>
+
 <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
