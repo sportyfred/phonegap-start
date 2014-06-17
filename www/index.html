@@ -347,8 +347,11 @@ calculate();
 
 
 
-xmlhttp=new XMLHttpRequest();
+
+window.setTimeout(function(){
+  xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","http://localhost:8080/speed",true);
+  
 
   window.setInterval(function(){
   /// call your function here
@@ -376,7 +379,8 @@ d3.select(".chart")
 }
 }, 1000);
 
-
+  
+}, 2000);
 
 </script>
 
