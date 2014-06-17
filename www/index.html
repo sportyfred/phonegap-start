@@ -349,11 +349,12 @@ calculate();
 
 
 window.setTimeout(function(){
-  xmlhttp=new XMLHttpRequest();
+
+  window.setInterval(function(){
+      xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","http://localhost:8080/speed",true);
   
 
-  window.setInterval(function(){
   /// call your function here
 try {
   xmlhttp.send();
