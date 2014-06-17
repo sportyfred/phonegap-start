@@ -344,6 +344,12 @@ calculate();
 <script>
  var speedData = 30;
 
+
+window.setInterval(function(){
+  /// call your function here
+
+
+
 xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","http://localhost:8080/speed",true);
 try {
@@ -368,6 +374,7 @@ d3.select(".chart")
   document.getElementById("httpspeed").innerHTML="statttus: " +e;
 
 }
+}, 500);
 
 
 
