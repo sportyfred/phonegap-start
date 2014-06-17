@@ -345,13 +345,13 @@ calculate();
  var speedData = 30;
 
 
-window.setInterval(function(){
-  /// call your function here
-
 
 
 xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","http://localhost:8080/speed",true);
+
+  window.setInterval(function(){
+  /// call your function here
 try {
   xmlhttp.send();
   
