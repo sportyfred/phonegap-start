@@ -19,7 +19,7 @@
 
 </style>
 <script type="text/javascript">
-var speedData = 30;
+ var speedData = 30;
 function httpGet()
 {
 
@@ -27,8 +27,10 @@ xmlhttp=new XMLHttpRequest();
 xmlhttp.open("GET","http://localhost:8080/speed",true);
 try {
   xmlhttp.send();
-  //alert(xmlhttp.status + xmlhttp.responseText + "jssj");
-speedData = xmlhttp.responseText;
+  
+speedData = parseInt(xmlhttp.responseText);
+  
+  document.getElementById("httpspeed").innerHTML= speedData;
 } catch(e) {
   document.getElementById("httpspeed").innerHTML="statttus: " +e;
 
