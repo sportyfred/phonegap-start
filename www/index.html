@@ -300,7 +300,8 @@ Estimated distance (based on state of charge): <span id="estimatedDistance"></sp
 
   
   
-  speed: <span id="httpspeed"></span>
+  speed: <span id="httpspeed"></span><br>
+  Test: <span id="test"></span>
 </div>
 <div>
 <button onclick="calculate()">Calculate</button>
@@ -358,9 +359,9 @@ xmlhttp.open("GET","http://localhost:8080/speed",true);
   /// call your function here
 try {
   xmlhttp.send();
-  console.log("xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText));
+ // console.log("xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText));
 var speedData = parseInt(xmlhttp.responseText);
-console.log("speeddata: " + speedData + "typeof speeddata" + typeof(speedData));
+document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText)+"speeddata: " + speedData + "typeof speeddata" + typeof(speedData));
   var data = [speedData, 8, 15, 16, 23, 42];
 
 var x = d3.scale.linear()
