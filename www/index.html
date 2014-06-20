@@ -359,6 +359,7 @@ xmlhttp.open("GET","http://localhost:8080/speed",true);
   /// call your function here
 try {
   xmlhttp.send();
+  alert(xmlhttp.responseText);
  // console.log("xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText));
 var speedData = xmlhttp.responseText;
 document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + "<br>type: "+typeof(xmlhttp.responseText)+"<br>speeddata: " + speedData + "<br>typeof speeddata" + typeof(speedData);
