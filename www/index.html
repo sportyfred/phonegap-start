@@ -19,12 +19,12 @@
 
 </style>
 <script type="text/javascript">
-
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","http://localhost:8080/speed",false);
 function httpGet()
 {
 
-xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","http://localhost:8080/speed",false);
+
 try {
   xmlhttp.send();
   
