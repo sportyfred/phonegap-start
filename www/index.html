@@ -343,7 +343,7 @@ calculate();
 </script>
   <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
- var speedData = 30;
+ //var speedData = 30;
 
 
 
@@ -375,7 +375,7 @@ d3.select(".chart")
   .enter().append("div")
     .style("width", function(d) { return x(d) + "px"; })
     .text(function(d) { return d; });
-  document.getElementById("httpspeed").innerHTML= speedData;
+ d ocument.getElementById("httpspeed").innerHTML= speedData;
 } catch(e) {
   document.getElementById("httpspeed").innerHTML="statttus: " +e;
 
