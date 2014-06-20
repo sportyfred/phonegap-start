@@ -20,7 +20,22 @@
 </style>
 <script type="text/javascript">
 
+function httpGet()
+{
 
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","http://localhost:8080/speed",true);
+try {
+  xmlhttp.send();
+  
+speedData = parseInt(xmlhttp.responseText);
+  
+  document.getElementById("httpspeed").innerHTML= speedData;
+} catch(e) {
+  document.getElementById("httpspeed").innerHTML="statttus: " +e;
+
+}
+}
     //! evenergy.js
 //! version: 0.1.0
 //! authors: Filip Kis, Anders LundstrÃ¶m
