@@ -365,19 +365,17 @@ calculate();
 
 
 
-/*
-
 window.setTimeout(function(){
 
   window.setInterval(function(){
       xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","http://localhost:8080/speed",true);
+xmlhttp.open("GET","http://localhost:8080/speed",false);
   
 
   /// call your function here
 try {
   xmlhttp.send();
-  alert(xmlhttp.status + xmlhttp.responseText);
+ 
  // console.log("xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText));
 var speedData = xmlhttp.responseText;
 document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + "<br>type: "+typeof(xmlhttp.responseText)+"<br>speeddata: " + speedData + "<br>typeof speeddata" + typeof(speedData);
