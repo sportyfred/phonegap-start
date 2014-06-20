@@ -28,8 +28,10 @@ xmlhttp.open("GET","http://localhost:8080/speed",true);
 try {
   xmlhttp.send();
   
-speedData = parseInt(xmlhttp.responseText);
-  
+//speedData = parseInt(xmlhttp.responseText);
+  var speedData = xmlhttp.responseText;
+document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + 
+"<br>type: "+typeof(xmlhttp.responseText)+"<br>speeddata: " + speedData + "<br>typeof speeddata: " + typeof(speedData);
   document.getElementById("httpspeed").innerHTML= speedData;
 } catch(e) {
   document.getElementById("httpspeed").innerHTML="statttus: " +e;
