@@ -29,8 +29,8 @@ try {
   xmlhttp.send();
   
 //
-  var speedData = xmlhttp.responseText;
-  speedData = parseInt(xmlhttp.responseText);
+
+  var speedData = parseInt(xmlhttp.responseText);
 document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + 
 "<br>type: "+typeof(xmlhttp.responseText)+"<br>speeddata: " + speedData + "<br>typeof speeddata: " + typeof(speedData);
   document.getElementById("httpspeed").innerHTML= speedData;
