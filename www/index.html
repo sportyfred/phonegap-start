@@ -358,7 +358,7 @@ try {
   xmlhttp.send();
  
  // console.log("xmlresp: "+xmlhttp.responseText + "type: "+typeof(xmlhttp.responseText));
-var speedData = xmlhttp.responseText;
+var speedData = parseInt(xmlhttp.responseText);
 document.getElementById("test").innerHTML="xmlresp: "+xmlhttp.responseText + "<br>type: "+typeof(xmlhttp.responseText)+"<br>speeddata: " + speedData + "<br>typeof speeddata" + typeof(speedData);
   var data = [speedData, 8, 15, 16, 23, 42];
 
